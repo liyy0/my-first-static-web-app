@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Typography } from "@mui/material";
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { BASE_URL,GET_DEFAULT_HEADERS } from "./globals";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import express from 'express'
+// import express from 'express'
 import Button from '@mui/material/Button';
-import * as dotenv from 'dotenv'
+// import * as dotenv from 'dotenv'
 // // const path = require('path-browserify')
 // dotenv.config();
 
@@ -18,7 +18,7 @@ function App() {
   const [curShipperId, setcurShipperId] = useState<string>("");
   const [curShipment, setcurShipment] = useState([]);
   const [errorMsg, setErrorMsg] = useState<string>("");
-  const [pagesize,setPageSize] = useState<number>(5);
+  // const [pagesize,setPageSize] = useState<number>(5);
 
   const fetchSomeData = async () => {
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}&code=${api_key}`, {
@@ -32,9 +32,7 @@ function App() {
     return json
     
   };
-  // useEffect(() => {
 
-  // })
 
   
   const submitHandler = (event:any) => {
@@ -64,10 +62,10 @@ function App() {
     { field: 'BoxesRcvd', headerName: 'Boxes Received', width: 100 },
   ];
   
-  const rows = [
-    { id: 1, StudentName: 'abc', ClassId: 'C123', ClassName: 'ABCD', Semester: '123'},
+  // const rows = [
+  //   { id: 1, StudentName: 'abc', ClassId: 'C123', ClassName: 'ABCD', Semester: '123'},
 
-  ];
+  // ];
 
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
