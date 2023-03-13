@@ -5,14 +5,11 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { BASE_URL,GET_DEFAULT_HEADERS } from "./globals";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-// import express from 'express'
 import Button from '@mui/material/Button';
-// import * as dotenv from 'dotenv'
-// // const path = require('path-browserify')
-// dotenv.config();
 
-// let api_key = process.env.api_key_keyvault || ""
-let api_key = "jWEgIXzfodOaGQKxty7JR3hxGooA1HhT1f3Py7KeMAClAzFuUx63tA==";
+
+// let api_key = "jWEgIXzfodOaGQKxty7JR3hxGooA1HhT1f3Py7KeMAClAzFuUx63tA==";
+let api_key = process.env.REACT_APP_api_key as string;
 function App() {
   // // You will need to use more of these!
   const [curShipperId, setcurShipperId] = useState<string>("");
