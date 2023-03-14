@@ -15,6 +15,7 @@ function App() {
   const [curShipperId, setcurShipperId] = useState<string>("");
   const [curShipment, setcurShipment] = useState([]);
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [apiKey,setapiKey] = useState<string>("");
   // const [pagesize,setPageSize] = useState<number>(5);
 
   // const fetchSomeData = async () => {
@@ -35,15 +36,15 @@ function App() {
     })
   
     const json = await res.text();
-    console.log(json);
-    return json
+    setapiKey(json);
   };
 
 
   const fetchSomeData = async () => {
+    getApiKey();
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
-          headers:GET_DEFAULT_HEADERS(),
+          headers:GET_DEFAULT_HEADERS(apiKey),
           credentials: "include"
         });
     const json = await res.json();
