@@ -52,9 +52,6 @@ function App() {
     return json
     
   };
-  useEffect(() => {
-    getApiKey();
-  });
 
 
   
