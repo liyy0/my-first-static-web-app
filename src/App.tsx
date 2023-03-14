@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 
 
 // let api_key = "jWEgIXzfodOaGQKxty7JR3hxGooA1HhT1f3Py7KeMAClAzFuUx63tA==";
-let api_key = process.env.REACT_APP_api_key as string;
+// let api_key = process.env.REACT_APP_api_key as string;
 function App() {
   // // You will need to use more of these!
   const [curShipperId, setcurShipperId] = useState<string>("");
@@ -17,13 +17,25 @@ function App() {
   const [errorMsg, setErrorMsg] = useState<string>("");
   // const [pagesize,setPageSize] = useState<number>(5);
 
-  const fetchSomeData = async () => {
-    const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}&code=${api_key}`, {
+  // const fetchSomeData = async () => {
+  //   const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}&code=${api_key}`, {
+  //         method: 'get',
+  //         headers:GET_DEFAULT_HEADERS(),
+  //         credentials: "include"
+  //       });
+  //   console.log(api_key);
+  //   const json = await res.json();
+  //   console.log(json)
+  //   return json
+    
+  // };
+
+    const fetchSomeData = async () => {
+    const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
           headers:GET_DEFAULT_HEADERS(),
           credentials: "include"
         });
-    console.log(api_key);
     const json = await res.json();
     console.log(json)
     return json
