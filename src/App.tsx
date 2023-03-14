@@ -41,7 +41,7 @@ function App() {
 
 
   const fetchSomeData = async () => {
-    getApiKey();
+    await getApiKey();
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
           headers:GET_DEFAULT_HEADERS(apiKey),
