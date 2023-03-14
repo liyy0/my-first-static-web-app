@@ -34,7 +34,7 @@ function App() {
       method: "GET"
     })
   
-    const json = await res.json();
+    const json = await res.text();
     console.log(json);
     return json
   };
