@@ -27,10 +27,10 @@ function App() {
   };
 
   
-
+  getApiKey();
 
   const fetchSomeData = async () => {
-    await getApiKey();
+
     // console.log(apiKey);
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
