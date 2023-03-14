@@ -16,20 +16,7 @@ function App() {
   const [curShipment, setcurShipment] = useState([]);
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [apiKey,setapiKey] = useState<string>("default_none");
-  // const [pagesize,setPageSize] = useState<number>(5);
 
-  // const fetchSomeData = async () => {
-  //   const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}&code=${api_key}`, {
-  //         method: 'get',
-  //         headers:GET_DEFAULT_HEADERS(),
-  //         credentials: "include"
-  //       });
-  //   console.log(api_key);
-  //   const json = await res.json();
-  //   console.log(json)
-  //   return json
-    
-  // };
   const getApiKey = async () => {
     const res = await fetch("../../api/getkey", {
       method: "GET"
