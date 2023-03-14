@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Typography } from "@mui/material";
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
@@ -29,8 +29,18 @@ function App() {
   //   return json
     
   // };
+  const getApiKey = async () => {
+    const res = await fetch("../../api/getkey", {
+      method: "GET"
+    })
+  
+    const json = await res.json();
+    console.log(json);
+    return json
+  };
 
-    const fetchSomeData = async () => {
+
+  const fetchSomeData = async () => {
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
           headers:GET_DEFAULT_HEADERS(),
@@ -41,6 +51,9 @@ function App() {
     return json
     
   };
+  useEffect(() => {
+    console.log(getApiKey)
+  });
 
 
   
