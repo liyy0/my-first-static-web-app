@@ -39,9 +39,11 @@ function App() {
     setapiKey(json);
   };
 
+  getApiKey();
+  
 
   const fetchSomeData = async () => {
-    await getApiKey();
+    console.log(apiKey);
     const res = await fetch(`${BASE_URL}ShipperId=${curShipperId}`, {
           method: 'get',
           headers:GET_DEFAULT_HEADERS(apiKey),
