@@ -31,15 +31,16 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-      # - name: Log in with Azure
-      #   uses: azure/login@v1
-      #   with:
-      #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
-      # - uses: Azure/get-keyvault-secrets@v1
-      #   with:
-      #     keyvault: "keyvault4functionapi" # name of key vault in Azure portal
-      #     secrets: 'function--getshipment--default'  # comma separated list of secret keys to fetch from key vault 
-      #   id: myGetSecretAction # ID for secrets that you will reference
+      - name: Log in with Azure
+        uses: azure/login@v1
+        with:
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+        azcliversion: 2.0.72
+        inlineScript: |
+            az functionapp keys set -g rg-DS519-stu -n function4api --key-type functionKeys --key-name rotate  
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
