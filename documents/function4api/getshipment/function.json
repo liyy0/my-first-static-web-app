@@ -1,0 +1,28 @@
+﻿{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "database",
+      "direction": "in",
+      "type": "cosmosDB",
+      "connectionStringSetting": "PRIMARY_CONNECTION_STRING",
+      "databaseName": "warehouse",
+      "collectionName": "shipment",
+      "sqlQuery": "select s.ShipperID,s.Date,s.WarehouseID,s.ShippingPO,s.ShipmentID,s.BoxesRcvd,s.id from shipping s where s.ShipperID = {ShipperId}"
+    }
+  ]
+}

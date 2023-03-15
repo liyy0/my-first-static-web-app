@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: Warehouse Automation API
+  version: 0.0.0
+servers:
+  - url: https://function4api.azurewebsites.net
+tags:
+  - name: shipment
+paths:
+  /shipment:
+    post:
+      tags:
+        - shipment
+      summary: Creates a shipment.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipment_post'
+      responses:
+        '200':
+          description: sucess!
+  /shipment/{shipperId}:
+    get:
+      tags:
+        - shipment
+      summary: Get shipments info based on shipper Id.
+      description: Returns all shipments under this shipper Id.
+      parameters:
+        - name: shipperId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  $ref: '#/components/schemas/shipment'
+components:
+  schemas:
+    shipment_post:
+      type: object
+      properties:
+        recieved: 
+          type: array
+          items:
+            type: object
+            $ref: '#/components/schemas/shipment'
+    shipment:
+      type: object
+      properties:
+        ShipperID:
+          type: string
+          example: 1
+        Date:
+          type: string
+          example: Mar 11, 2022
+        WarehouseID:
+          type: string
+          example: a908cef7-4c67-40f3-88f7-08a03ba4104e
+        ShippingPO:
+          type: string
+          example: 3f7b2654-052d-4a4e-905f-87f22a3877a9
+        ShipmentID:
+          type: string
+          example: 3
+        BoxesRcvd:
+          type: string
+          example: 5
+        id:
+          type: string
+          example: 25a2d123-b393-43c5-b014-87b198b612b1
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-functions-key
+security:
+  - ApiKeyAuth: []

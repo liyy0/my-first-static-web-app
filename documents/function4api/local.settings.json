@@ -1,0 +1,25 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage_edit": "DefaultEndpointsProtocol=https;AccountName=rgds519stu9e48;AccountKey=zCzaZmjsm7tsezQPtgX+P7FYSkvjvjGDGpdo/zPmwdUYgXQOX4S5uiq887d5WMnSSWS0PWU74l83+AStLX/1fA==;EndpointSuffix=core.windows.net",
+    "WEBSITE_SLOT_NAME": "Production",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "ScmType": "None",
+    "AzureWebJobsSecretStorageType": "keyvault",
+    "WEBSITE_AUTH_ENABLED": "False",
+    "REMOTEDEBUGGINGVERSION": "16.0.32106.67",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=23a6e094-729b-42b1-b87c-cb35310a6b1a;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/",
+    "FUNCTIONS_RUNTIME_SCALE_MONITORING_ENABLED": "0",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "23a6e094-729b-42b1-b87c-cb35310a6b1a",
+    "REACT_APP_api_key": "jWEgIXzfodOaGQKxty7JR3hxGooA1HhT1f3Py7KeMAClAzFuUx63tA==",
+    "WEBSITE_NODE_DEFAULT_VERSION": "18.12.1",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=rgds519stu9e48;AccountKey=zCzaZmjsm7tsezQPtgX+P7FYSkvjvjGDGpdo/zPmwdUYgXQOX4S5uiq887d5WMnSSWS0PWU74l83+AStLX/1fA==;EndpointSuffix=core.windows.net",
+    "WEBSITE_CONTENTSHARE": "function4api9412",
+    "WEBSITE_AUTH_AUTO_AAD": "False",
+    "PRIMARY_CONNECTION_STRING": "AccountEndpoint=https://db-assignment4.documents.azure.com:443/;AccountKey=zxX4hzxPSqPFko2FUxAq37x3nM41cQkfNfVZr6TeZ4Qtcv779ai5iG5UwUZhvkqCRNbQUnmfZ4xxACDboYaHXg==;",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "WEBSITE_SITE_NAME": "function4api",
+    "AzureWebJobsSecretStorageKeyVaultUri": "https://keyvault4functionapi.vault.azure.net/",
+    "WEBSITE_AUTH_LOGOUT_PATH": "/.auth/logout"
+  }
+}
