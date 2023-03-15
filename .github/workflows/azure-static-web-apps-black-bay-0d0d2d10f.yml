@@ -27,7 +27,9 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az functionapp keys set -g rg-DS519-stu -n function4api --key-type functionKeys --key-name rotate  
+            az functionapp keys set -g rg-DS519-stu -n function4api --key-type functionKeys --key-name rotate
+            az functionapp config appsettings set --name apigetkey --resource-group rg-ds519-stu --settings REACT_APP_api_key="@Microsoft.KeyVault(SecretUri=https://keyvault4functionapi.vault.azure.net/secrets/host--functionKey--rotate/)"
+            Restart-AzFunctionApp -Name apigetkey -ResourceGroupName rg-ds519-stu -Force
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
