@@ -19,7 +19,7 @@ function App() {
 
   const getApiKey = async () => {
     const res = await fetch("../../api/getkey", {
-      method: "GET"
+      method: "GET"//
     })
   
     const json = await res.text();
