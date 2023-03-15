@@ -38,7 +38,6 @@ jobs:
       - name: Azure CLI script
         uses: azure/CLI@v1
         with:
-        azcliversion: 2.0.72
         inlineScript: |
             az functionapp keys set -g rg-DS519-stu -n function4api --key-type functionKeys --key-name rotate  
 
