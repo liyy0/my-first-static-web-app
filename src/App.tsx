@@ -18,7 +18,7 @@ function App() {
   const [apiKey,setapiKey] = useState<string>("default_none");
 
   const getApiKey = async () => {
-    const res = await fetch("https://assignment4-api.azurewebsites.net/api/settings", {
+    const res = await fetch("https://apigetkey.azurewebsites.net/api/pushkey", {
       method: "GET"//
     })
   
